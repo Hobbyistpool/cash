@@ -1,4 +1,5 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2016 CASH developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,7 +27,7 @@ namespace Checkpoints
         boost::assign::map_list_of
         ( 0, hashGenesisBlockOfficial )
         ( 19494, uint256("0x00000000169f68123cfafca03be2f319c59dd20cb8caae58a3e9652fb0ff2dcb"))
-
+        ( 1070001, uint256("0x0000002b97449970fabf35533b69c37ae1869575dd7b66d3f91fefc2980929dc"))
 
 ;
 
@@ -367,7 +368,7 @@ namespace Checkpoints
 
 // ppcoin: sync-checkpoint master key
 
-const std::string CSyncCheckpoint::strMasterPubKey = "040cc88c5a29ba77ac760df671efe18f6837d6561896100e0ccde490c1971860b2fe41312a3d966a72ab6936dc8e737cb855263b1aaf92e5c3e7146d4550c588c6";
+const std::string CSyncCheckpoint::strMasterPubKey = "0490aaa63e59889bdb51111503b1cbcfd521b148a5f614125b5c2fd190c3ed05efb5cbea4ff8b276ed65a6808fba2bb53f439db1ca79c935edd1df0981ba4b2553";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 

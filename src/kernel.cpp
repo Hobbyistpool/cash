@@ -1,4 +1,5 @@
 // Copyright (c) 2012-2013 The PPCoin developers
+// Copyright (c) 2016 CASH developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,6 +22,7 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
     ( 0, 0x0e00670bu )
     ( 19494, 0x72f48962 )
+    ( 1070001, 0x6e3477eb )
     ;
 
 // Get the last stake modifier and its generation time from a given block
