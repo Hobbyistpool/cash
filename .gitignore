@@ -22,5 +22,6 @@ qrc_*.cpp
 build
 #MXE
 compile-cash.sh
+release/*.exe
 *.Debug
 *.Release

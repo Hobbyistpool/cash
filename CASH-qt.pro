@@ -3,9 +3,9 @@ TARGET = CASH-qt
 VERSION = 1.2.0
 INCLUDEPATH += src src/json src/qt
 QT += network
+DEFINES += QT_GUI
 DEFINES += BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
-#CONFIG += thread
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
@@ -17,16 +17,18 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 #LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 #LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
 #windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
-#LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
-#BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
-#BOOST_INCLUDE_PATH=C:/deps/boost
-#BOOST_LIB_PATH=C:/deps/boost/stage/lib
-#BDB_INCLUDE_PATH=c:/deps/db/build_unix
-#BDB_LIB_PATH=c:/deps/db/build_unix
-#OPENSSL_INCLUDE_PATH=c:/deps/ssl/include
-#OPENSSL_LIB_PATH=c:/deps/ssl
-#MINIUPNPC_LIB_PATH=c:/miniupnpc
+#LIBS += -lboost_system-mgw48-mt-s-1_60 -lboost_filesystem-mgw48-mt-s-1_60 -lboost_program_options-mgw48-mt-s-1_60 -lboost_thread-mgw48-mt-s-1_60
+#BOOST_LIB_SUFFIX=-mgw48-mt-s-1_60
+#BOOST_INCLUDE_PATH=C:/deps/boost_1_60_0
+#BOOST_LIB_PATH=C:/deps/boost_1_60_0/stage/lib
+#BDB_INCLUDE_PATH=c:/deps/db-4.8.30.NC/build_unix
+#BDB_LIB_PATH=c:/deps/db-4.8.30.NC/build_unix
+#OPENSSL_INCLUDE_PATH=c:/deps/openssl-1.0.2g/include
+#OPENSSL_LIB_PATH=c:/deps/openssl-1.0.2g
+#MINIUPNPC_LIB_PATH=c:/deps/miniupnpc
 #MINIUPNPC_INCLUDE_PATH=c:/deps/miniupnpc
+#QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
+#QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
 
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
@@ -142,15 +144,8 @@ contains(USE_O3, 1) {
     QMAKE_CFLAGS += -O3
 }
 
-*-g++-32 {
-    message("32 platform, adding -msse2 flag")
-
-    QMAKE_CXXFLAGS += -msse2
-    QMAKE_CFLAGS += -msse2
-}
-
-#QMAKE_CXXFLAGS += -msse2
-#QMAKE_CFLAGS += -msse2
+QMAKE_CXXFLAGS += -msse2
+QMAKE_CFLAGS += -msse2
 QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
 
 # Input
@@ -359,11 +354,11 @@ OTHER_FILES += \
 # platform specific defaults, if not overridden on command line
 isEmpty(BOOST_LIB_SUFFIX) {
     macx:BOOST_LIB_SUFFIX = -mt
-    windows:BOOST_LIB_SUFFIX = -mt
+    windows:BOOST_LIB_SUFFIX = -mgw48-mt-s-1_60
 }
 
 isEmpty(BOOST_THREAD_LIB_SUFFIX) {
-    win32:BOOST_THREAD_LIB_SUFFIX = _win32$$BOOST_LIB_SUFFIX
+    win32:BOOST_THREAD_LIB_SUFFIX = $$BOOST_LIB_SUFFIX
     else:BOOST_THREAD_LIB_SUFFIX = $$BOOST_LIB_SUFFIX
 }
 
