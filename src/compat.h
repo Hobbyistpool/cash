@@ -23,6 +23,7 @@
 #include <net/if.h>
 #include <netinet/in.h>
 #include <ifaddrs.h>
+#include <unistd.h>
 #endif
 
 typedef u_int SOCKET;

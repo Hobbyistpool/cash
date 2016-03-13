@@ -6,15 +6,21 @@
 #ifndef _BITCOINRPC_H_
 #define _BITCOINRPC_H_ 1
 
-#include <string>
+#include "compat.h"
+
 #include <list>
 #include <map>
+#include <string>
+#include <boost/iostreams/concepts.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
 
 class CBlockIndex;
 
 #include "json/json_spirit_reader_template.h"
-#include "json/json_spirit_writer_template.h"
 #include "json/json_spirit_utils.h"
+#include "json/json_spirit_writer_template.h"
 
 #include "util.h"
 #include "checkpoints.h"
