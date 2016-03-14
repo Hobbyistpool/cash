@@ -245,7 +245,7 @@ static bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64& nStakeModifier
 // kernel (input 0) must meet the formula
 //     hash(nStakeModifier + txPrev.block.nTime + txPrev.offset + txPrev.nTime + txPrev.vout.n + nTime) < bnTarget * nCoinDayWeight
 // this ensures that the chance of getting a coinstake is proportional to the
-// amount of coin age one owns.
+// amount of coin one owns.
 // The reason this hash is chosen is the following:
 //   nStakeModifier: 
 //       (v0.3) scrambles computation to make it very difficult to precompute
