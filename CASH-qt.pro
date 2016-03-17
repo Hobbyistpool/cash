@@ -5,7 +5,6 @@ VERSION = 1.2.0
 # INCLUDEPATH += src src/json src/qt /usr/include/mach /sw/include/db4
 # for OS X 10.8, it may only be necessary to point to the berkely db 4.8 library
 INCLUDEPATH += src src/json src/qt
-QT += network
 DEFINES += QT_GUI
 DEFINES += BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
