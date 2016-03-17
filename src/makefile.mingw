@@ -2,7 +2,7 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-USE_UPNP:=-
+USE_UPNP:=0
 USE_IPV6:=-
 
 INCLUDEPATHS= \
@@ -36,7 +36,7 @@ ifndef USE_UPNP
 	override USE_UPNP = -
 endif
 ifneq (${USE_UPNP}, -)
- INCLUDEPATHS += -I"C:\deps\miniupnpc"
+ INCLUDEPATHS += -I"C:\deps"
  LIBPATHS += -L"C:\deps\miniupnpc"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
