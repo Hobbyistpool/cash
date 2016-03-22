@@ -337,10 +337,10 @@ QString AddressTableModel::addRow(const QString &type, const QString &label, con
                 return QString();
             }
             if(!wallet->GetKeyFromPool(newKey, false))
- +          {
- +              editStatus = KEY_GENERATION_FAILURE;
- +              return QString();
- +          }
+            {
+                editStatus = KEY_GENERATION_FAILURE;
+                return QString();
+            }
         }
         strAddress = CBitcoinAddress(newKey.GetID()).ToString();
     }
